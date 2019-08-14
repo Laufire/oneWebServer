@@ -58,6 +58,7 @@
     "test": "test"
   },
   "dependencies": {
-    "@laufire/utils": "0.0.28"
+    "@laufire/utils": "0.0.28",
+    "express": "^4.17.1"
   }
 }

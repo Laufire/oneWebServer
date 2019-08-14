@@ -1,7 +1,7 @@
 import webServer from '../src';
 
 describe('webServer', () => {
-	test('no tests yet', () => {
+	test('initialization', () => {
 		expect(webServer).toEqual(expect.any(Function));
 	});
 });

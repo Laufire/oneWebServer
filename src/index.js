@@ -1,17 +1,18 @@
 /* The main entry. */
+import express from 'express';
+import requestParser from './modules/requestParser';
 
-import http from 'http';
-import { log } from 'util';
+/* Delegates */
+const app = express();
 
 /* Exports */
 export default (config, core) => {
-	const router = core ? core.parse(config.router) : config.router;
+	const router = core ? core.parse(config.router, 'router') : config.router;
 	const { port } = config;
 
-	http.createServer(router).listen(port, (err) => {
-		if(err)
-			return log(err);
-
-		log(`oneWebServer is listening to ${ port }`);
+	app.all('/*', async (req, resp) => {
+		resp.end(await router(requestParser(req)));
 	});
+
+	app.listen(port);
 };
