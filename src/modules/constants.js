@@ -1,5 +1,5 @@
 export default {
-	methodMap: {
+	methodActions: {
 		DELETE: 'delete',
 		GET: 'read',
 		LIST: 'list',

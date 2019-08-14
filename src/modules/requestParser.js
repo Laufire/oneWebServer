@@ -5,21 +5,26 @@
 import constants from './constants';
 
 /* Data */
-const { methodMap } = constants;
+const { methodActions } = constants;
 
 /* Helpers */
 const getAction = (method, id) =>
-	methodMap[id ? method : 'LIST'];
+	methodActions[method !== 'GET'
+		? method
+		: id ? 'GET' : 'LIST'
+	];
 
 /* Exports */
-export default (req) => {
+export default (req, idField) => {
 	const { query } = req;
-	const { id } = query;
+	const { [idField]: id } = query;
+	const action = getAction(req.method, id);
 
 	return {
-		action: getAction(req.method, id),
+		action: action,
 		base: req,
-		params: query,
+		data: action !== 'list' ? req.body : query,
+		id: id,
 		path: req.params[0],
 	};
 };
