@@ -1,6 +1,6 @@
 {
   "name": "@laufire/one-webserver",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple, declarative node web-server.",
   "main": "./dist/index.js",
   "scripts": {
