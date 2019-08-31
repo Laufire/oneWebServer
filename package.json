@@ -1,5 +1,5 @@
 {
-  "name": "@laufire/oneWebServer",
+  "name": "@laufire/one-webserver",
   "version": "0.0.0",
   "description": "A simple, declarative node web-server.",
   "main": "./dist/index.js",
