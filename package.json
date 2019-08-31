@@ -58,6 +58,7 @@
     "test": "test"
   },
   "dependencies": {
+    "@laufire/one-router": "0.0.3",
     "@laufire/utils": "0.0.28",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
